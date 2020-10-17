@@ -1,0 +1,12 @@
+.single-card{
+    background-color: #f1f1f1;
+    border-radius: 1.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 250px;
+}
+
+.created{
+    bottom: 20px;
+    position: absolute;
+}

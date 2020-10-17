@@ -1,0 +1,50 @@
+{
+    "entries": [{
+            "id": 1,
+            "title": "Wie lerne ich Angular?",
+            "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell Angular lernen.",
+            "creator": "michael",
+            "creatorId":1
+        }, {
+            "id": 2,
+            "title": "Wie lerne ich React?",
+            "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell React lernen.",
+            "creator": "marcel",
+            "creatorId":2
+        }, {
+            "id": 3,
+            "title": "Wie lerne ich Vue?",
+            "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell Vue lernen.",
+            "creator": "philipp",
+            "creatorId":3
+        }
+    ],
+    "comments": [{
+            "id": 1,
+            "text": "Ruf Michael Zikes an, der kann dir sicherlich helfen.",
+			"creator":"Simp69",
+            "entryId": 1
+        }
+    ],
+    "users": [{
+            "id": 1,
+            "username": "michael",
+			"password":"michael"
+        },
+		{
+            "id": 2,
+            "username": "marcel",
+			"password":"marcel"
+        },
+		{
+            "id": 3,
+            "username": "philipp",
+			"password":"philipp"
+        },
+		{
+            "id": 4,
+            "username": "Simp69",
+			"password":"Simp69"
+        }
+    ]
+}
