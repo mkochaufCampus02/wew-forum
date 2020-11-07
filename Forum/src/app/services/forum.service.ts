@@ -14,4 +14,6 @@ export abstract class ForumService {
 
   abstract getEntries(): Observable<Entry[]>;
 
+  abstract addEntry(entry: Entry): Observable<object>;
+
 }

@@ -10,6 +10,13 @@ import { ForumService } from './forum.service';
 export class DefaultForumService implements ForumService {
 
   constructor(private http: HttpClient) { }
+  addEntry(entry: Entry): Observable<object> {
+    let url = 'http://localhost:3000/entries';
+
+    let headers = new HttpHeaders()
+      .set('Accept', 'application/json');
+    return this.http.post(url, entry,{headers});
+  }
 
   getEntries(): Observable<Entry[]> {
     let url = 'http://localhost:3000/entries';

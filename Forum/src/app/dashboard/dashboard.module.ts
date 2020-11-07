@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EntriesComponent } from './entries/entries.component';
 import { SingleEntryComponent } from './single-entry/single-entry.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { SingleEntryComponent } from './single-entry/single-entry.component';
     SingleEntryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     EntriesComponent,

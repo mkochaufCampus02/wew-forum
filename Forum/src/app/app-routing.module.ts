@@ -1,25 +1,22 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { EntriesComponent } from './dashboard/entries/entries.component';
+import { EntryDetailComponent } from './entry-detail/entry-detail/entry-detail.component';
 import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo:'home',
-    pathMatch:'full'  
-  },
-  {
-    path:'home',
-    component: AppComponent
-  },
-  {
-    path:'**',
-    redirectTo:'home'
+    component: EntriesComponent
   },
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: "entry/:id",
+    component: EntryDetailComponent
   }
 ];
 

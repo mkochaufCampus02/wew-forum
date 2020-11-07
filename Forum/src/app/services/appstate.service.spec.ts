@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DefaultForumService } from './defaultforum.service';
+import { AppstateService } from './appstate.service';
 
-describe('DefaultflightService', () => {
-  let service: DefaultForumService;
+describe('AppstateService', () => {
+  let service: AppstateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DefaultForumService);
+    service = TestBed.inject(AppstateService);
   });
 
   it('should be created', () => {
