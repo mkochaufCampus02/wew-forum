@@ -6,7 +6,18 @@
     height: 250px;
 }
 
-.created{
+.single-entry-footer{
     bottom: 20px;
     position: absolute;
+    width: 100%;
+}
+
+.delete{
+    right: 60px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.delete:hover{
+    color: #68B3C8;
 }

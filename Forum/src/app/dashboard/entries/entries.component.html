@@ -1,11 +1,20 @@
 <div class="card">
 
-    <div class="header">
-        <h2 class="title">Forum-Einträge</h2>
-        <br>
+    <div class="header-table header">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h2 class="title">Forum-Einträge</h2>
+                </td>
+                <td *ngIf="IsUserLoggedIn == true" align="right">
+                    <input class="btn btn-default" type="button" (click)="showAddEntry()" value="Eintrag hinzufügen">
+                </td>
+            </tr>
+        </table>
     </div>
+    
     <div>
-        <input class="btn btn-default" type="button" (click)="addEntry()" value="Eintrag hinzufügen">
+        
     </div>
 
     <div class="card enty-container">
@@ -15,6 +24,18 @@
         text="{{e.text}}"
         creator="{{e.creator}}"
         id="{{e.id}}"
+        (deleted)="entryDeleted()"
         ></app-single-entry>
+    </div>
+
+
+    <div class="popup" *ngIf="IsAddEntryPopupShown == true">
+        <div class="popup-content">
+            <div class="popup-close" (click)="closePopup()">&times;</div>
+            <new-entry
+            (saved)="entrySaved()"
+            ></new-entry>
+        </div>
+        
     </div>
 </div>

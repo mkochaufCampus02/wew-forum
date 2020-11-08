@@ -1,14 +1,20 @@
-<a [routerLink]="['/entry',id]">
-<div class="single-card">
+<div class="single-card" id="single-card">
+    <a [routerLink]="['/entry',id]">
     <div>
         <h2 style="margin-top:1px;">{{title}}</h2>
     </div>
     <div style="color:#666666;"> 
         {{text}}
     </div>
-    <div class="created">
-        Erstellt von: {{creator}}
+    </a>
+    <div class="single-entry-footer" id="single-footer">
+        <div class="created">
+            Erstellt von: {{creator}}
+        </div>
+        <div class="delete" *ngIf="IsSameUser == true" (click)="deleteEntry()">
+            <i class="ti-trash"></i>
+        </div>
     </div>
+    
 </div>
 
-</a>

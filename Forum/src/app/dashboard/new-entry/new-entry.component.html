@@ -1,0 +1,18 @@
+<h2 style="margin-top: 0px;">Neuen Eintrag hinzufügen</h2>
+
+<form #form="ngForm">
+    <div class="form-group">
+        <label>Titel:</label>
+        <input [(ngModel)]="title" name="title" class="entry-input form-control" type="text">
+    </div>
+
+    <div class="form-group">
+        <label>Text:</label>
+        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10"></textarea>
+    </div>
+
+    <button
+        [disabled]="!title || !text"
+        (click)="save()"
+        class="btn btn-default">Speichern</button>
+</form>

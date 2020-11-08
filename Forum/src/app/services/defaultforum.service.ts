@@ -8,10 +8,11 @@ import { ForumService } from './forum.service';
   providedIn: 'root'
 })
 export class DefaultForumService implements ForumService {
+  private BaseUrl:string = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { }
   addEntry(entry: Entry): Observable<object> {
-    let url = 'http://localhost:3000/entries';
+    let url = this.BaseUrl+'entries';
 
     let headers = new HttpHeaders()
       .set('Accept', 'application/json');
@@ -19,12 +20,21 @@ export class DefaultForumService implements ForumService {
   }
 
   getEntries(): Observable<Entry[]> {
-    let url = 'http://localhost:3000/entries';
+    let url = this.BaseUrl+'entries';
 
     let headers = new HttpHeaders()
       .set('Accept', 'application/json');
 
     return this.http.get<Entry[]>(url, {headers});
+  }
+
+  deleteEntry(id:number): Observable<object>
+  {
+    let url = this.BaseUrl+"entries/"+id;
+    let headers = new HttpHeaders()
+      .set('Accept', 'application/json');
+
+    return this.http.delete(url, {headers});
   }
  
 }

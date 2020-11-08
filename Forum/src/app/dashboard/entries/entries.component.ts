@@ -3,6 +3,8 @@ import {Entry} from '../../entities/entry';
 import {ForumService} from '../../services/forum.service'
 import { Component, OnInit } from '@angular/core';
 import { AppstateService } from 'src/app/services/appstate.service';
+import { User } from 'src/app/entities/user';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-entries',
@@ -13,30 +15,24 @@ export class EntriesComponent implements OnInit {
 
     public Entries: Array<Entry> = [];
 
+    public IsUserLoggedIn: boolean = false;
+
+    public IsAddEntryPopupShown = false;
+
     constructor(private forumSerivce: ForumService, private appstateService: AppstateService) {
     }
 
     ngOnInit(): void { 
-
+      this.IsUserLoggedIn = this.appstateService.IsUserLoggedIn();
       this.ReadEntries();
     }
 
-    public addEntry()
+    public showAddEntry()
     {
-      this.appstateService.SetUser(1,"michael");
-      const currentUser = this.appstateService.GetUser();
-      const newEntry: Entry = {
-        id: null,
-        title: "Michaels New one",
-        text: "A new entry",
-        creator: currentUser.userName,
-        creatorId: currentUser.id
-      };
-      this.forumSerivce.addEntry(newEntry).subscribe((test)=> {
-        console.log(test);
-        this.ReadEntries();
-      });
-      
+      if(!this.IsAddEntryPopupShown)
+      {
+        this.IsAddEntryPopupShown = true;
+      }
     }
 
     private ReadEntries()
@@ -44,6 +40,25 @@ export class EntriesComponent implements OnInit {
       this.forumSerivce.getEntries().subscribe((entries) => {
         this.Entries = entries;
       })
+    }
+
+    public closePopup()
+    {
+      if(this.IsAddEntryPopupShown)
+      {
+        this.IsAddEntryPopupShown = false;
+      }
+    }
+
+    public entrySaved()
+    {
+      this.closePopup();
+      this.ReadEntries();
+    }
+
+    public entryDeleted()
+    {
+      this.ReadEntries();
     }
 
 }

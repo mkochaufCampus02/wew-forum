@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppstateService } from 'src/app/services/appstate.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appstateService: AppstateService) { }
 
   ngOnInit(): void {
+    this.appstateService.SetUser(1,"michael");
   }
 
 }

@@ -11,6 +11,12 @@ export class AppstateService {
 
   private readonly UserBehavior = new BehaviorSubject<User>(null);
 
+  public IsUserLoggedIn():boolean
+  {
+    const user: User = this.GetUser();
+    return user !== null && user.id !== 0;
+  }
+
   public GetUser(): User
   {
     return this.UserBehavior.getValue();
