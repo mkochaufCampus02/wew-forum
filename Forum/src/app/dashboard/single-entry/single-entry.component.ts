@@ -24,6 +24,8 @@ export class SingleEntryComponent implements OnInit {
 
   @Output("deleted") EntryDeleted = new EventEmitter();
 
+  @Output("openEdit") EntryEdit = new EventEmitter<number>();
+
   public IsSameUser: boolean;
 
   constructor(private appStateService: AppstateService, private forumService: ForumService) { }
@@ -41,6 +43,11 @@ export class SingleEntryComponent implements OnInit {
     });
 
 
+  }
+
+  public editEntry()
+  {
+    this.EntryEdit.next(this.id);
   }
 
   /*@HostListener('window:resize')

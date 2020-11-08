@@ -25,6 +25,7 @@
         creator="{{e.creator}}"
         id="{{e.id}}"
         (deleted)="entryDeleted()"
+        (openEdit)="editEntry($event)"
         ></app-single-entry>
     </div>
 
@@ -32,10 +33,21 @@
     <div class="popup" *ngIf="IsAddEntryPopupShown == true">
         <div class="popup-content">
             <div class="popup-close" (click)="closePopup()">&times;</div>
-            <new-entry
+            <entry-form
             (saved)="entrySaved()"
-            ></new-entry>
+            ></entry-form>
         </div>
-        
+    </div>
+
+    <div class="popup" *ngIf="IsEditEntryPopupShown == true">
+        <div class="popup-content">
+            <div class="popup-close" (click)="closePopup()">&times;</div>
+            <entry-form
+                id="{{EntryToEdit.id}}"
+                title="{{EntryToEdit.title}}"
+                text="{{EntryToEdit.text}}"
+            (saved)="entrySaved()"
+            ></entry-form>
+        </div>
     </div>
 </div>

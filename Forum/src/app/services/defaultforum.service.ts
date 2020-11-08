@@ -11,6 +11,13 @@ export class DefaultForumService implements ForumService {
   private BaseUrl:string = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { }
+  upateEntry(entry: Entry): Observable<object> {
+    let url = this.BaseUrl+'entries/'+entry.id;
+
+    let headers = new HttpHeaders()
+      .set('Accept', 'application/json');
+    return this.http.put(url, entry,{headers});
+  }
   addEntry(entry: Entry): Observable<object> {
     let url = this.BaseUrl+'entries';
 

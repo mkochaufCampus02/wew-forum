@@ -18,6 +18,8 @@ export class EntriesComponent implements OnInit {
     public IsUserLoggedIn: boolean = false;
 
     public IsAddEntryPopupShown = false;
+    public IsEditEntryPopupShown = false;
+    public EntryToEdit:Entry= null;
 
     constructor(private forumSerivce: ForumService, private appstateService: AppstateService) {
     }
@@ -48,6 +50,11 @@ export class EntriesComponent implements OnInit {
       {
         this.IsAddEntryPopupShown = false;
       }
+
+      if(this.IsEditEntryPopupShown)
+      {
+        this.IsEditEntryPopupShown = false;
+      }
     }
 
     public entrySaved()
@@ -59,6 +66,12 @@ export class EntriesComponent implements OnInit {
     public entryDeleted()
     {
       this.ReadEntries();
+    }
+
+    public editEntry(event){
+
+      this.EntryToEdit = this.Entries.find(x=> x.id == event);
+      this.IsEditEntryPopupShown = true;
     }
 
 }

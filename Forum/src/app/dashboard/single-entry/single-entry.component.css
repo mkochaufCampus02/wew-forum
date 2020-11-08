@@ -21,3 +21,13 @@
 .delete:hover{
     color: #68B3C8;
 }
+
+.edit{
+    right: 90px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.edit:hover{
+    color: #68B3C8;
+}
