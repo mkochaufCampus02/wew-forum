@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="container">
+
+  <form #form="ngForm" class="form-signin" >
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" name="inputUsername" [(ngModel)]="username" class="form-control" placeholder="Username" required="" autofocus="">
+    <div *ngIf="form?.controls['inputUsername']?.invalid && (form?.controls['inputUsername']?.dirty || form?.controls['inputUsername']?.touched)"
+         class="alert alert-danger">
+      <div *ngIf="form?.controls['inputUsername']?.errors.required">
+        Username is required.
+      </div>
+    </div>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="inputPassword" [(ngModel)]="password"  class="form-control" placeholder="Password" required="">
+    <div *ngIf="form?.controls['inputPassword']?.invalid && (form?.controls['inputPassword']?.dirty || form?.controls['inputPassword']?.touched)"
+         class="alert alert-danger">
+      <div *ngIf="form?.controls['inputPassword']?.errors.required">
+        Password is required.
+      </div>
+    </div>
+
+    <div id="errorDiv" class="alert alert-danger hidden" role="alert">
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true" (click)="clearErrorDiv()">&times;</span></button>
+      <p>User / Password combination not found</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-lg btn-primary btn-block" (click)="signInUser()"
+                [disabled]="form?.controls['inputUsername']?.invalid || form?.controls['inputPassword']?.invalid">Sign in</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-lg btn-primary btn-block" (click)="registerUser()"
+                [disabled]="form?.controls['inputUsername']?.invalid || form?.controls['inputPassword']?.invalid">Register</button>
+      </div>
+    </div>
+  </form>
+
+</div>
