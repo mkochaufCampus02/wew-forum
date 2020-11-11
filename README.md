@@ -1,9 +1,17 @@
 # wew-forum
+Just a plain forum with user registration
 
-How to run:
+## How to run:
+ - Open a Terminal with /Forum as root
  - Install json server with the command:
-	npm install json-server -g
+```bash
+npm install json-server -g
+```
  - Install the Internet:
-	npm install
+ ```bash
+ npm install
+ ```
  - Run the whole application with this command:
-    npm start
+  ```bash
+  npm start
+  ```

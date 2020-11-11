@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppstateService } from 'src/app/services/appstate.service';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {User} from '../../entities/user';
+import {HttpParams} from '@angular/common/http';
 import {UserResponse} from '../../entities/userResponse';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,23 +14,17 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private appstateService: AppstateService, private http: HttpClient) { }
+  constructor(private appstateService: AppstateService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   signInUser(): void {
-    const url = 'http://localhost:3000/users';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-
     const params = new HttpParams()
       .set('username', this.username)
       .set('password', this.password);
 
-    this.http
-      .get<UserResponse[]>(url, {headers, params})
+    this.userService.getUser(params)
       .subscribe(
         (users: UserResponse[]) => {
           // If user is not found show error message
@@ -50,25 +44,12 @@ export class LoginComponent implements OnInit {
   }
 
   registerUser(): void {
-    const url = 'http://localhost:3000/users';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-
     const getParams = new HttpParams()
       .set('username', this.username);
 
-    const newUser = {
-      username: this.username,
-      password: this.password
-    };
-
-
-    this.http
-      .get<User[]>(url, {headers, params: getParams})
+    this.userService.getUser(getParams)
       .subscribe(
-        (users: User[]) => {
-          console.log('user', users);
+        (users: UserResponse[]) => {
           // If user with same username is found, show error message
           if (users.length > 0) {
             console.error('Username already in use');
@@ -76,12 +57,9 @@ export class LoginComponent implements OnInit {
             return;
           }
 
-          this.http
-            .post<UserResponse>(url, newUser)
+          this.userService.addUser(this.username, this.password)
             .subscribe(
               (user: UserResponse) => {
-                console.log('user', user);
-                // If user with same username is found, show error message
                 this.clearErrorDiv();
                 // Set user information in appstateService
                 this.appstateService.SetUser(user.id, user.username);
