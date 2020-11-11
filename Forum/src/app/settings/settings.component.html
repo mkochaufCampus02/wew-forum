@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Settings</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Password</div>
+    <div class="panel-body">
+      <form #form="ngForm" >
+        <label for="inputNewPassword" class="sr-only">Username</label>
+        <input type="password" id="inputNewPassword" name="inputNewPassword" [(ngModel)]="passwordNew" class="form-control" placeholder="New password" required="" autofocus="">
+        <label for="inputNewPassword2" class="sr-only">Password</label>
+        <input type="password" id="inputNewPassword2" name="inputNewPassword2" [(ngModel)]="passwordNew2" class="form-control" placeholder="Repeat new password" required="">
+        <div id="passwordErrorDiv" class="alert alert-danger hidden" role="alert">
+          <button type="button" class="close" aria-label="Close"><span aria-hidden="true" (click)="hideMessageDiv('passwordErrorDiv', true)">&times;</span></button>
+          <p>User / Password combination not found</p>
+        </div>
+        <div id="passwordSuccessDiv" class="alert alert-success hidden" role="alert">
+          <button type="button" class="close" aria-label="Close"><span aria-hidden="true" (click)="hideMessageDiv('passwordSuccessDiv')">&times;</span></button>
+          <p>Password successfully updated</p>
+        </div>
+        <button class="btn btn-primary pull-right" (click)="changePassword()"
+                [disabled]="form?.controls['inputNewPassword']?.invalid || form?.controls['inputNewPassword2']?.invalid">Change password</button>
+      </form>
+    </div>
+  </div>
+</div>

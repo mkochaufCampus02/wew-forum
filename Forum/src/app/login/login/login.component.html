@@ -1,7 +1,7 @@
 <div class="container">
 
-  <form #form="ngForm" class="form-signin" >
-    <h2 class="form-signin-heading">Please sign in</h2>
+  <form #form="ngForm" >
+    <h2>Please sign in</h2>
     <label for="inputUsername" class="sr-only">Username</label>
     <input type="text" id="inputUsername" name="inputUsername" [(ngModel)]="username" class="form-control" placeholder="Username" required="" autofocus="">
     <div *ngIf="form?.controls['inputUsername']?.invalid && (form?.controls['inputUsername']?.dirty || form?.controls['inputUsername']?.touched)"

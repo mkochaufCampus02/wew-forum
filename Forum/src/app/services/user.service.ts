@@ -32,4 +32,8 @@ export class UserService {
 
     return this.http.post<UserResponse>(this.url, newUser);
   }
+
+  updateUser(userId: number, params: HttpParams): Observable<UserResponse>  {
+    return this.http.put<UserResponse>(this.url + '/' + userId, params);
+  }
 }

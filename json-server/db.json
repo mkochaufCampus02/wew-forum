@@ -37,9 +37,9 @@
       "password": "michael"
     },
     {
-      "id": 2,
       "username": "marcel",
-      "password": "marcel"
+      "password": "marcel",
+      "id": 2
     },
     {
       "id": 3,
