@@ -3,6 +3,7 @@ import { AppstateService } from 'src/app/services/appstate.service';
 import {HttpParams} from '@angular/common/http';
 import {UserResponse} from '../../entities/userResponse';
 import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private appstateService: AppstateService, private userService: UserService) { }
+  constructor(private appstateService: AppstateService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
           this.clearErrorDiv();
           // Set user information in appstateService
           this.appstateService.SetUser(users[0].id, users[0].username);
+          this.router.navigate(['/']);
         },
         (errResp) => {
           console.error('Error loading user', errResp);
@@ -63,6 +65,8 @@ export class LoginComponent implements OnInit {
                 this.clearErrorDiv();
                 // Set user information in appstateService
                 this.appstateService.SetUser(user.id, user.username);
+
+                this.router.navigate(['/']);
               },
               (errResp) => {
                 console.error('Error creating user', errResp);

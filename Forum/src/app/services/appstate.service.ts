@@ -11,6 +11,8 @@ export class AppstateService {
 
   private readonly UserBehavior = new BehaviorSubject<User>(null);
 
+  constructor() { }
+
   public IsUserLoggedIn(): boolean
   {
     const user: User = this.GetUser();
@@ -22,8 +24,7 @@ export class AppstateService {
     return this.UserBehavior.getValue();
   }
 
-  public SetUser(userId: number, name: string): void
-  {
+  public SetUser(userId: number, name: string): void {
     const value: User = {
       id : userId,
       userName : name
@@ -32,5 +33,11 @@ export class AppstateService {
     this.UserChanged.next(value);
   }
 
-  constructor() { }
+  public LogOutUser(): void {
+    this.UserBehavior.next(null);
+    this.UserChanged.next({
+      id : 0,
+      userName : null
+    });
+  }
 }
