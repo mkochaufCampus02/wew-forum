@@ -32,12 +32,4 @@ export class AppstateService {
     this.UserBehavior.next(value);
     this.UserChanged.next(value);
   }
-
-  public LogOutUser(): void {
-    this.UserBehavior.next(null);
-    this.UserChanged.next({
-      id : 0,
-      userName : null
-    });
-  }
 }
