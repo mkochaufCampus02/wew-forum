@@ -1,1 +1,66 @@
-<p>entry-detail works!</p>
+
+<div class="single-card" id="single-card">
+    <div>
+        <h2 style="margin-top:1px;">{{title}}</h2>
+    </div>
+    <div style="color:#666666;"> 
+        {{text}}
+        <p></p>
+    </div>
+    <div class="created">
+        Erstellt von: {{creator}}
+    </div>
+</div>
+
+<div class="card">
+
+    <div class="header-table header">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h3 class="title">Kommentare</h3>
+                </td>
+                <td align="right" *ngIf="IsUserLoggedIn == true" >
+                    <input class="btn btn-default" type="button" (click)="showAddComment()" value="Kommentar hinzufügen">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div>
+        
+    </div>
+
+    <div class="card enty-container">
+        <app-single-comment class="col-md-12"
+        *ngFor="let c of Comments"
+        text="{{c.text}}"
+        creator="{{c.creator}}"
+        id="{{c.id}}"
+        (deleted)="commentDeleted()"
+        (liked)="commentLiked()"
+        (openEdit)="editComment($event)"
+        ></app-single-comment>
+    </div>
+
+
+    <div class="popup" *ngIf="IsAddCommentPopupShown == true">
+        <div class="popup-content">
+            <div class="popup-close" (click)="closePopup()">&times;</div>
+            <comment-form  
+            (saved)="commentSaved()"     
+            ></comment-form>
+        </div>
+    </div>
+
+    <div class="popup" *ngIf="IsEditCommentPopupShown == true">
+        <div class="popup-content">
+            <div class="popup-close" (click)="closePopup()">&times;</div>
+            <comment-form
+                id="{{CommentToEdit.id}}"
+                text="{{CommentToEdit.text}}"
+            (saved)="commentSaved()"
+            ></comment-form>
+        </div>
+    </div>
+</div>

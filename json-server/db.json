@@ -17,17 +17,32 @@
     {
       "id": 3,
       "title": "Wie lerne ich Vue?",
-      "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell Vue lernen.",
+      "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell Vue lernen!",
       "creator": "philipp",
       "creatorId": 3
     }
   ],
   "comments": [
     {
+      "entry": 1,
       "id": 1,
       "text": "Ruf Michael Zikes an, der kann dir sicherlich helfen.",
       "creator": "Simp69",
       "entryId": 1
+    },
+    {
+      "entry": 3,
+      "id": 3,
+      "text": "a\nb\nc",
+      "creator": "philipp",
+      "creatorId": 3
+    },
+    {
+      "entry": 1,
+      "id": 4,
+      "text": "Ich denke, dass dir Cornelia Rauch hier auch helfen kann :)",
+      "creator": "philipp",
+      "creatorId": 3
     }
   ],
   "users": [
@@ -50,6 +65,32 @@
       "id": 4,
       "username": "Simp69",
       "password": "Simp69"
+    }
+  ],
+  "likes": [
+    {
+      "comment": "1",
+      "id": 2,
+      "creator": "marcel",
+      "creatorId": 2
+    },
+    {
+      "comment": "1",
+      "id": 3,
+      "creator": "philipp",
+      "creatorId": 3
+    },
+    {
+      "comment": "3",
+      "id": 4,
+      "creator": "marcel",
+      "creatorId": 2
+    },
+    {
+      "comment": "3",
+      "id": 5,
+      "creator": "michael",
+      "creatorId": 1
     }
   ]
 }

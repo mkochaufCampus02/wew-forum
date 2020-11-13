@@ -1,0 +1,52 @@
+.single-card{
+    background-color: #f1f1f1;
+    border-radius: 1.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.single-entry-footer{
+    bottom: 20px;
+    position: absolute;
+    width: 100%;
+}
+
+.delete{
+    right: 60px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.delete:hover{
+    color: #68B3C8;
+}
+
+.edit{
+    right: 90px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.edit:hover{
+    color: #68B3C8;
+}
+
+.like{
+    right: 90px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.like:hover{
+    color: #68B3C8;
+}
+
+.unlike{
+    right: 90px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.unlike:hover{
+    color: #68B3C8;
+}

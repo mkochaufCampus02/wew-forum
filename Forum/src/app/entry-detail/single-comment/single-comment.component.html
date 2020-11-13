@@ -1,0 +1,26 @@
+<div class="single-card" id="single-card">
+    <div style="color:#666666;"> 
+        <div class="created">
+            <p hidden>{{id}}</p>
+            {{creator}} hat kommentiert:
+        </div>
+        {{text}}
+        <p></p>
+        <p>Dieser Kommentar gefällt: {{likes}}</p>
+    </div>
+    <div class="single-entry-footer" id="single-footer">
+        <div class="delete" *ngIf="IsSameUser == true" (click)="deleteComment()">
+            <i class="ti-trash"></i>
+        </div>
+        <div class="edit" *ngIf="IsSameUser == true" (click)="editComment()">
+            <i class="ti-pencil-alt"></i>
+        </div>
+        <div class="like" *ngIf="IsUser == true && IsSameUser == false && IsLiked == false" (click)="likeComment()">
+            <i class="ti-thumb-up"></i>
+        </div>
+        <div class="unlike" *ngIf="IsUser == true && IsSameUser == false && IsLiked == true" (click)="unlikeComment()">
+            <i class="ti-thumb-down"></i>
+        </div>
+    </div>
+    
+</div>

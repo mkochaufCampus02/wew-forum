@@ -1,0 +1,13 @@
+<h2 style="margin-top: 0px;">Kommentar hinzufügen</h2>
+
+<form #form="ngForm">
+    <div class="form-group">
+        <label>Text:</label>
+        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10"></textarea>
+    </div>
+
+    <button
+        [disabled]="!text"
+        (click)="save()"
+        class="btn btn-default">Speichern</button>
+</form>
