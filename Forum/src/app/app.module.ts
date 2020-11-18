@@ -9,7 +9,7 @@ import {LoginModule} from './login/login.module';
 import {EntryDetailModule} from './entry-detail/entry-detail.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './settings/settings.component';
-import { CensorshipValidatorDirective } from './shared/validators/censorship-validator.directive';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
@@ -20,13 +20,13 @@ import { CensorshipValidatorDirective } from './shared/validators/censorship-val
       DashboardModule,
       LoginModule,
       EntryDetailModule,
-      AppRoutingModule
+      AppRoutingModule,
+      SharedModule
    ],
    declarations: [
       AppComponent,
       NavbarComponent,
-      SettingsComponent,
-      CensorshipValidatorDirective
+      SettingsComponent
    ],
    providers: [],
    bootstrap: [
