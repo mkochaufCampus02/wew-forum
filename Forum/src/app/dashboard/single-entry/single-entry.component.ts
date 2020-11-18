@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { User } from 'src/app/entities/user';
-import { AppstateService } from 'src/app/services/appstate.service';
-import { ForumService } from 'src/app/services/forum.service';
+import { AppstateService } from 'src/app/shared/services/appstate.service';
+import { ForumService } from 'src/app/shared/services/forum.service';
 
 @Component({
   selector: 'app-single-entry',

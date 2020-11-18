@@ -51,5 +51,19 @@
       "username": "Simp69",
       "password": "Simp69"
     }
+  ],
+  "blacklist":[
+	{
+		"id":1,
+		"value":"Angular is bad"
+	},
+	{
+		"id":2,
+		"value":"Angular sucks"
+	},
+	{
+		"id":3,
+		"value":"Angular ist kacke"
+	}
   ]
 }

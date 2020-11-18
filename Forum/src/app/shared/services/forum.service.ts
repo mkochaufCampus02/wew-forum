@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Entry } from '../entities/entry';
+import { Entry } from '../../entities/entry';
+import { BlacklistItem } from '../../entities/blacklistItem';
 import {DefaultForumService} from './defaultforum.service';
 
 @Injectable({
@@ -19,5 +19,7 @@ export abstract class ForumService {
   abstract upateEntry(entry: Entry): Observable<object>;
 
   abstract deleteEntry(id:number): Observable<object>;
+
+  abstract getBlacklistedItems(): Observable<BlacklistItem[]>;  
 
 }

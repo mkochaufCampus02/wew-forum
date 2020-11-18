@@ -9,6 +9,7 @@ import {LoginModule} from './login/login.module';
 import {EntryDetailModule} from './entry-detail/entry-detail.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './settings/settings.component';
+import { CensorshipValidatorDirective } from './shared/validators/censorship-validator.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SettingsComponent } from './settings/settings.component';
    declarations: [
       AppComponent,
       NavbarComponent,
-      SettingsComponent
+      SettingsComponent,
+      CensorshipValidatorDirective
    ],
    providers: [],
    bootstrap: [
