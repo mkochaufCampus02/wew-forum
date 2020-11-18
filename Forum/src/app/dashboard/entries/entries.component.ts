@@ -1,10 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Entry} from '../../entities/entry';
-import {ForumService} from '../../services/forum.service'
+import {ForumService} from '../../shared/services/forum.service'
 import { Component, OnInit } from '@angular/core';
-import { AppstateService } from 'src/app/services/appstate.service';
-import { User } from 'src/app/entities/user';
-import { Subscription } from 'rxjs';
+import { AppstateService } from 'src/app/shared/services/appstate.service';
 
 @Component({
   selector: 'app-entries',

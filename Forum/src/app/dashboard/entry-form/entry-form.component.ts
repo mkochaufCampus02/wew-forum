@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Entry } from 'src/app/entities/entry';
 import { User } from 'src/app/entities/user';
-import { AppstateService } from 'src/app/services/appstate.service';
-import { ForumService } from 'src/app/services/forum.service';
+import { AppstateService } from 'src/app/shared/services/appstate.service';
+import { ForumService } from 'src/app/shared/services/forum.service';
 
 
 @Component({
