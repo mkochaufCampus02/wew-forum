@@ -36,4 +36,8 @@ export class UserService {
   updateUser(userId: number, params: HttpParams): Observable<UserResponse>  {
     return this.http.put<UserResponse>(this.url + '/' + userId, params);
   }
+
+  deleteUser(userId: number): Observable<UserResponse> {
+    return this.http.delete<UserResponse>(this.url + '/' + userId);
+  }
 }

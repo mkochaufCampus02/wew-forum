@@ -16,6 +16,8 @@ export class SettingsComponent implements OnInit {
   passwordNew: string;
   passwordNew2: string;
 
+  deletionState = 0;
+
   constructor(private appstateService: AppstateService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -46,6 +48,27 @@ export class SettingsComponent implements OnInit {
         (errResp) => {
           console.error('Error creating user', errResp);
         });
+  }
+
+  deleteAccount(): void {
+    console.log('delete start');
+    this.userService.deleteUser(this.appstateService.GetUser().id)
+      .subscribe(
+        (user: UserResponse) => {
+          console.log(user);
+          this.appstateService.SetUser(0, null);
+          this.router.navigate(['/login']);
+        },
+        (errResp) => {
+          console.error('Error deleting user', errResp);
+        });
+  }
+
+  increaseDeletionState(): void  {
+    this.deletionState++;
+  }
+  resetDeletionState(): void {
+    this.deletionState = 0;
   }
 
   hideMessageDiv(elementId: string, doClearDiv: boolean = false): void {
