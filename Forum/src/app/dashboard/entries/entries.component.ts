@@ -1,4 +1,4 @@
-import {Entry} from '../../entities/entry';
+import {Entry} from '../../shared/entities/entry';
 import {ForumService} from '../../shared/services/forum.service'
 import { Component, OnInit } from '@angular/core';
 import { AppstateService } from 'src/app/shared/services/appstate.service';

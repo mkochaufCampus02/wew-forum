@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AppstateService} from '../services/appstate.service';
-import {UserService} from '../services/user.service';
+import {UserService} from '../shared/services/user.service';
 import {Router} from '@angular/router';
-import {User} from '../entities/user';
 import {HttpParams} from '@angular/common/http';
-import {UserResponse} from '../entities/userResponse';
+import {UserResponse} from '../shared/entities/userResponse';
+import { AppstateService } from '../shared/services/appstate.service';
 
 @Component({
   selector: 'app-settings',

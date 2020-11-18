@@ -5,16 +5,16 @@
         <label>Titel:</label>
         <input [(ngModel)]="title" name="title" class="entry-input form-control" type="text" censorship>
     </div>
-    <div class="alert alert-danger" *ngIf="ngForm?.controls['title']?.hasError('blacklist')">
+   <!-- <div class="alert alert-danger" *ngIf="ngForm?.controls['title']?.hasError('blacklist')">
         Bitte drücke dich doch etwas netter aus.
-    </div>
+    </div>-->
     <div class="form-group">
         <label>Text:</label>
         <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10" censorship></textarea>
     </div>
-    <div class="alert alert-danger" *ngIf="ngForm?.controls['text']?.hasError('blacklist')">
+    <!--<div class="alert alert-danger" *ngIf="ngForm?.controls['text']?.hasError('blacklist')">
         Bitte drücke dich doch etwas netter aus.
-    </div>
+    </div>-->
 
     <button
         [disabled]="!title || !text"

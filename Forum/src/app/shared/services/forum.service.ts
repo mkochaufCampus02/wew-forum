@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Entry } from '../../entities/entry';
-import { BlacklistItem } from '../../entities/blacklistItem';
+import { Entry } from '../../shared/entities/entry';
+import { BlacklistItem } from '../../shared/entities/blacklistItem';
 import {DefaultForumService} from './defaultforum.service';
 
 @Injectable({

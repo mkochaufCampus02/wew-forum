@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BlacklistItem } from 'src/app/entities/blacklistItem';
-import { Entry } from '../../entities/entry';
+import { BlacklistItem } from '../../shared/entities/blacklistItem';
+import { Entry } from '../../shared/entities/entry';
 import { ForumService } from './forum.service';
 
 @Injectable({

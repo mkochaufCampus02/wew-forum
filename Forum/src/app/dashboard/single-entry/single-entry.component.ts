@@ -1,10 +1,10 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { User } from 'src/app/entities/user';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '../../shared/entities/user';
 import { AppstateService } from 'src/app/shared/services/appstate.service';
 import { ForumService } from 'src/app/shared/services/forum.service';
 
 @Component({
-  selector: 'app-single-entry',
+  selector: 'single-entry',
   templateUrl: './single-entry.component.html',
   styleUrls: ['./single-entry.component.css']
 })
