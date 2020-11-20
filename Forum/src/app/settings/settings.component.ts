@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AppstateService} from '../services/appstate.service';
-import {UserService} from '../services/user.service';
+import {UserService} from '../shared/services/user.service';
 import {Router} from '@angular/router';
-import {User} from '../entities/user';
 import {HttpParams} from '@angular/common/http';
-import {UserResponse} from '../entities/userResponse';
+import {UserResponse} from '../shared/entities/userResponse';
+import { AppstateService } from '../shared/services/appstate.service';
 
 @Component({
   selector: 'app-settings',
@@ -15,6 +14,8 @@ export class SettingsComponent implements OnInit {
 
   passwordNew: string;
   passwordNew2: string;
+
+  deletionState = 0;
 
   constructor(private appstateService: AppstateService, private userService: UserService, private router: Router) { }
 
@@ -46,6 +47,27 @@ export class SettingsComponent implements OnInit {
         (errResp) => {
           console.error('Error creating user', errResp);
         });
+  }
+
+  deleteAccount(): void {
+    console.log('delete start');
+    this.userService.deleteUser(this.appstateService.GetUser().id)
+      .subscribe(
+        (user: UserResponse) => {
+          console.log(user);
+          this.appstateService.SetUser(0, null);
+          this.router.navigate(['/login']);
+        },
+        (errResp) => {
+          console.error('Error deleting user', errResp);
+        });
+  }
+
+  increaseDeletionState(): void  {
+    this.deletionState++;
+  }
+  resetDeletionState(): void {
+    this.deletionState = 0;
   }
 
   hideMessageDiv(elementId: string, doClearDiv: boolean = false): void {

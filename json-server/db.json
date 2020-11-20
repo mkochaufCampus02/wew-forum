@@ -47,11 +47,6 @@
   ],
   "users": [
     {
-      "id": 1,
-      "username": "michael",
-      "password": "michael"
-    },
-    {
       "username": "marcel",
       "password": "marcel",
       "id": 2
@@ -65,6 +60,25 @@
       "id": 4,
       "username": "Simp69",
       "password": "Simp69"
+    },
+    {
+      "username": "michael",
+      "password": "michael",
+      "id": 5
+    }
+  ],
+  "blacklist": [
+    {
+      "id": 1,
+      "value": "Angular is bad"
+    },
+    {
+      "id": 2,
+      "value": "Angular sucks"
+    },
+    {
+      "id": 3,
+      "value": "Angular ist kacke"
     }
   ],
   "likes": [

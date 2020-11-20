@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { User } from '../entities/user';
-import {AppstateService} from '../services/appstate.service';
+import { User } from '../shared/entities/user';
 import {Router} from '@angular/router';
+import { AppstateService } from '../shared/services/appstate.service';
 
 @Component({
     selector: 'app-navbar-cmp',
@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.userLoggedInSubscription = this.appstateService.UserChanged.subscribe((value: User) => {
+            console.log(value);
             this.isUserLoggedIn = value !== null && value.id !== 0;
             this.UserName = value.userName;
         });

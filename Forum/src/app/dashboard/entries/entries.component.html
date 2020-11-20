@@ -18,7 +18,7 @@
     </div>
 
     <div class="card enty-container">
-        <app-single-entry class="col-md-3 col-sm-3 col-lg-4"
+        <single-entry class="col-md-4 col-sm-4 col-lg-4 col-xs-6"
         *ngFor="let e of Entries"
         title="{{e.title}}"
         text="{{e.text}}"
@@ -26,7 +26,7 @@
         id="{{e.id}}"
         (deleted)="entryDeleted()"
         (openEdit)="editEntry($event)"
-        ></app-single-entry>
+        ></single-entry>
     </div>
 
 

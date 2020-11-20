@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {User} from '../entities/user';
+import {User} from '../../shared/entities/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,6 @@ export class AppstateService {
   public UserChanged = new EventEmitter();
 
   private readonly UserBehavior = new BehaviorSubject<User>(null);
-
-  constructor() { }
 
   public IsUserLoggedIn(): boolean
   {
@@ -24,7 +22,8 @@ export class AppstateService {
     return this.UserBehavior.getValue();
   }
 
-  public SetUser(userId: number, name: string): void {
+  public SetUser(userId: number, name: string): void
+  {
     const value: User = {
       id : userId,
       userName : name
@@ -32,4 +31,6 @@ export class AppstateService {
     this.UserBehavior.next(value);
     this.UserChanged.next(value);
   }
+
+  constructor() { }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {UserResponse} from '../entities/userResponse';
+import {UserResponse} from '../../shared/entities/userResponse';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -35,5 +35,9 @@ export class UserService {
 
   updateUser(userId: number, params: HttpParams): Observable<UserResponse>  {
     return this.http.put<UserResponse>(this.url + '/' + userId, params);
+  }
+
+  deleteUser(userId: number): Observable<UserResponse> {
+    return this.http.delete<UserResponse>(this.url + '/' + userId);
   }
 }
