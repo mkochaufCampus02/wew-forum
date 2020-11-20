@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { AppstateService } from 'src/app/services/appstate.service';
-import { User } from 'src/app/entities/user';
-import { EntryService } from 'src/app/services/entry.service';
-import { Comment } from 'src/app/entities/comment';
+import { AppstateService } from '../../shared/services/appstate.service';
+import { User } from '../../shared/entities/user';
+import { EntryService } from '../../shared/services/entry.service';
+import { Comment } from '../../shared/entities/comment';
 
 @Component({
   selector: 'comment-form',

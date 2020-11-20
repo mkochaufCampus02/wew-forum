@@ -18900,7 +18900,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum\Forum\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
+      /*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum2\wew-forum\Forum\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
       "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
 
       __webpack_require__(
@@ -18908,7 +18908,7 @@
       "./node_modules/zone.js/dist/zone-legacy.js");
 
       module.exports = __webpack_require__(
-      /*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum\Forum\src\polyfills.ts */
+      /*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum2\wew-forum\Forum\src\polyfills.ts */
       "./src/polyfills.ts");
       /***/
     }

@@ -1,8 +1,8 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Like } from 'src/app/entities/like';
-import { User } from 'src/app/entities/user';
-import { AppstateService } from 'src/app/services/appstate.service';
-import { EntryService } from 'src/app/services/entry.service';
+import { Like } from '../../shared/entities/like';
+import { User } from '../../shared/entities/user';
+import { AppstateService } from '../../shared/services/appstate.service';
+import { EntryService } from '../../shared/services/entry.service';
 
 @Component({
   selector: 'app-single-comment',

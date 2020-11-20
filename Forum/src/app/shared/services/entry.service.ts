@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Comment } from '../entities/comment';
 import { Like } from '../entities/like';
 import { Observable } from 'rxjs';
-import { CommentFormComponent } from '../entry-detail/comment-form/comment-form.component';
+import { CommentFormComponent } from '../../entry-detail/comment-form/comment-form.component';
 
 @Injectable({
   providedIn: 'root'

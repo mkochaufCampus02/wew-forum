@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppstateService } from 'src/app/services/appstate.service';
-import { EntryService } from '../../services/entry.service'
-import { Comment } from '../../entities/comment';
-import { Entry } from 'src/app/entities/entry';
-import { ForumService } from 'src/app/services/forum.service';
+import { AppstateService } from '../../shared/services/appstate.service';
+import { EntryService } from '../../shared/services/entry.service'
+import { Comment } from '../../shared/entities/comment';
+import { Entry } from '../../shared/entities/entry';
+import { ForumService } from '../../shared/services/forum.service';
 
 @Component({
   selector: 'app-entry-detail',
@@ -46,10 +46,12 @@ export class EntryDetailComponent implements OnInit {
 
     this.forumSerivce.getEntries().forEach(obj => {
       obj.forEach(child =>{
-        this.entry = child;
-        this.title = this.entry.title;
-        this.text = this.entry.text;
-        this.creator = this.entry.creator;
+        if( child.id == this.entry_id ){
+          this.entry = child;
+          this.title = this.entry.title;
+          this.text = this.entry.text;
+          this.creator = this.entry.creator;
+        }
       })      
     });
 

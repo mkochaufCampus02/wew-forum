@@ -89,12 +89,6 @@
       "creatorId": 2
     },
     {
-      "comment": "1",
-      "id": 3,
-      "creator": "philipp",
-      "creatorId": 3
-    },
-    {
       "comment": "3",
       "id": 4,
       "creator": "marcel",
@@ -105,6 +99,12 @@
       "id": 5,
       "creator": "michael",
       "creatorId": 1
+    },
+    {
+      "comment": "1",
+      "id": 6,
+      "creator": "philipp",
+      "creatorId": 3
     }
   ]
 }

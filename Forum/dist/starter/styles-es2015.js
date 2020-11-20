@@ -439,7 +439,7 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum\Forum\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum2\wew-forum\Forum\src\styles.css */"./src/styles.css");
 
 
 /***/ })
