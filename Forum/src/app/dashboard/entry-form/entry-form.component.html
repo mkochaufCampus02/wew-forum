@@ -3,21 +3,31 @@
 <form #form="ngForm">
     <div class="form-group">
         <label>Titel:</label>
-        <input [(ngModel)]="title" name="title" class="entry-input form-control" type="text" censorship>
+        <input [(ngModel)]="title" name="title" class="entry-input form-control" type="text" censorship required>
     </div>
-   <!-- <div class="alert alert-danger" *ngIf="ngForm?.controls['title']?.hasError('blacklist')">
-        Bitte drücke dich doch etwas netter aus.
-    </div>-->
+    <div *ngIf="form?.controls['title']?.touched === true">
+        <div *ngIf="form?.controls['title']?.hasError('required') === true" class="alert alert-danger">
+            Titel ist ein Pflichtfeld
+        </div>
+
+        <div *ngIf="form?.controls['title']?.hasError('censorship') === true" class="alert alert-danger">
+            Bitte drücke dich etwas besser aus. #GoodVibesOnly
+        </div>
+    </div>
     <div class="form-group">
         <label>Text:</label>
-        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10" censorship></textarea>
+        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10" required censorship></textarea>
     </div>
-    <!--<div class="alert alert-danger" *ngIf="ngForm?.controls['text']?.hasError('blacklist')">
-        Bitte drücke dich doch etwas netter aus.
-    </div>-->
-
+    <div *ngIf="form?.controls['text']?.touched === true">
+        <div *ngIf="form?.controls['text']?.hasError('required') === true" class="alert alert-danger">
+            Text ist ein Pflichtfeld
+        </div>
+        <div *ngIf="form?.controls['text']?.hasError('censorship') === true" class="alert alert-danger">
+            Bitte drücke dich etwas besser aus. #GoodVibesOnly
+        </div>
+    </div>
     <button
-        [disabled]="!title || !text"
+        [disabled]="!title || !text || !form.valid"
         (click)="save()"
         class="btn btn-default">Speichern</button>
 </form>

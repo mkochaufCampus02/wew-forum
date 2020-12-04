@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { CensorshipValidatorDirective } from 'src/app/shared/validation/censorship-validator.directive';
 import { Entry } from '../../shared/entities/entry';
 import { User } from '../../shared/entities/user';
-import { AppstateService } from 'src/app/shared/services/appstate.service';
-import { ForumService } from 'src/app/shared/services/forum.service';
+import { AppstateService } from '../../shared/services/appstate.service';
+import { ForumService } from '../../shared/services/forum.service';
 
 
 @Component({
@@ -15,14 +17,15 @@ export class EntryFormComponent implements OnInit {
   public id: number;
 
   @Input("title")
-  public title: string;
+  public title;
 
   @Input("text")
-  public text: string;
+  public text;
 
   @Output("saved") EntrySaved = new EventEmitter();
 
-  constructor(private forumService: ForumService, private appstateService: AppstateService) { }
+  constructor(private forumService: ForumService, private appstateService: AppstateService) { 
+  }
 
   ngOnInit(): void {
   }
@@ -59,8 +62,6 @@ export class EntryFormComponent implements OnInit {
         this.EntrySaved.next(newEntry);
       });
     }
-    
-    
   }
 
 }
