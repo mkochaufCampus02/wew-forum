@@ -1,6 +1,6 @@
 import {Entry} from '../../shared/entities/entry';
 import {ForumService} from '../../shared/services/forum.service'
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AppstateService } from 'src/app/shared/services/appstate.service';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { debounce, debounceTime } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { debounce, debounceTime } from 'rxjs/operators';
   templateUrl: './entries.component.html',
   styleUrls: ['./entries.component.css']
 })
-export class EntriesComponent implements OnInit, AfterViewInit {
+export class EntriesComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private ReadOnlyEntities: Array<Entry> = [];
     public Entries: Array<Entry> = [];
@@ -25,15 +25,20 @@ export class EntriesComponent implements OnInit, AfterViewInit {
 
     @ViewChild("searchTermInput") searchTermInput: ElementRef;
 
+    private searchTermSubscription: Subscription;
+
     constructor(private forumSerivce: ForumService, private appstateService: AppstateService) {
     }
-  ngAfterViewInit(): void {
-    fromEvent(this.searchTermInput.nativeElement,'keyup').pipe(
-      debounceTime(600)
-    ).subscribe( (e) => {
-      this.searchForEntries();
-    });
-  }
+    ngOnDestroy(): void {
+      this.searchTermSubscription.unsubscribe();
+    }
+    ngAfterViewInit(): void {
+      this.searchTermSubscription = fromEvent(this.searchTermInput.nativeElement,'keyup').pipe(
+        debounceTime(600)
+      ).subscribe( (e) => {
+        this.searchForEntries();
+      });
+    }
 
     ngOnInit(): void { 
       this.IsUserLoggedIn = this.appstateService.IsUserLoggedIn();
