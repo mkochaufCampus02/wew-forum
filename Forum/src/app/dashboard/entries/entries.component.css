@@ -68,3 +68,12 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.search{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.search-input{
+    background-color: #f1f1f1;
+}

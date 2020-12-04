@@ -1,15 +1,18 @@
 import {Entry} from '../../shared/entities/entry';
 import {ForumService} from '../../shared/services/forum.service'
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AppstateService } from 'src/app/shared/services/appstate.service';
+import { fromEvent, Observable, Subscription } from 'rxjs';
+import { debounce, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-entries',
   templateUrl: './entries.component.html',
   styleUrls: ['./entries.component.css']
 })
-export class EntriesComponent implements OnInit {
+export class EntriesComponent implements OnInit, AfterViewInit {
 
+    private ReadOnlyEntities: Array<Entry> = [];
     public Entries: Array<Entry> = [];
 
     public IsUserLoggedIn: boolean = false;
@@ -18,8 +21,19 @@ export class EntriesComponent implements OnInit {
     public IsEditEntryPopupShown = false;
     public EntryToEdit:Entry= null;
 
+    public searchTerm: string;
+
+    @ViewChild("searchTermInput") searchTermInput: ElementRef;
+
     constructor(private forumSerivce: ForumService, private appstateService: AppstateService) {
     }
+  ngAfterViewInit(): void {
+    fromEvent(this.searchTermInput.nativeElement,'keyup').pipe(
+      debounceTime(600)
+    ).subscribe( (e) => {
+      this.searchForEntries();
+    });
+  }
 
     ngOnInit(): void { 
       this.IsUserLoggedIn = this.appstateService.IsUserLoggedIn();
@@ -34,10 +48,16 @@ export class EntriesComponent implements OnInit {
       }
     }
 
+    private searchForEntries()
+    {
+      this.Entries = this.ReadOnlyEntities.filter(x=> x.title.includes(this.searchTerm));
+    }
+
     private ReadEntries()
     {
       this.forumSerivce.getEntries().subscribe((entries) => {
         this.Entries = entries;
+        this.ReadOnlyEntities = entries;
       })
     }
 
