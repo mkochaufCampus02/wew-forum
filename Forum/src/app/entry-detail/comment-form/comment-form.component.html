@@ -3,11 +3,20 @@
 <form #form="ngForm">
     <div class="form-group">
         <label>Text:</label>
-        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10" censorship></textarea>
+        <textarea [(ngModel)]="text" name="text" class="entry-input form-control" type="text" rows="10" required censorship_comment></textarea>
+    </div>
+
+    <div *ngIf="form?.controls['text']?.touched === true">
+        <div *ngIf="form?.controls['text']?.hasError('required') === true" class="alert alert-danger">
+            Text ist ein Pflichtfeld
+        </div>
+        <div *ngIf="form?.controls['text']?.hasError('censorship_comment') === true" class="alert alert-danger">
+            Bitte drücke dich etwas besser aus. #GoodVibesOnly
+        </div>
     </div>
 
     <button
-        [disabled]="!text"
+        [disabled]="!text || !form.valid"
         (click)="save()"
         class="btn btn-default">Speichern</button>
 </form>

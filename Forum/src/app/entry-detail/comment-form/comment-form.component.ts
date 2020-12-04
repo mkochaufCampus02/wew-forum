@@ -4,6 +4,7 @@ import { AppstateService } from '../../shared/services/appstate.service';
 import { User } from '../../shared/entities/user';
 import { EntryService } from '../../shared/services/entry.service';
 import { Comment } from '../../shared/entities/comment';
+import { CensorshipCommentValidatorDirective } from 'src/app/shared/validation/censorship_comment-validator.directive';
 
 @Component({
   selector: 'comment-form',

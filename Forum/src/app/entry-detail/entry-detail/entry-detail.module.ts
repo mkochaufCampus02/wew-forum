@@ -4,6 +4,7 @@ import { EntryDetailComponent } from './entry-detail.component';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
 import { FormsModule } from '@angular/forms';
 import { SingleCommentComponent } from '../single-comment/single-comment.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SingleCommentComponent } from '../single-comment/single-comment.compone
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports:[
     EntryDetailComponent,
