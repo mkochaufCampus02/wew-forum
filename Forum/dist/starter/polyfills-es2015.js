@@ -3033,7 +3033,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum3\wew-forum\Forum\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! D:\Git\WEW-Forum\Forum\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

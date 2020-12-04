@@ -17,13 +17,13 @@
 
       exports = ___CSS_LOADER_API_IMPORT___(true); // Module
 
-      exports.push([module.i, ".nav.navbar-nav.navbar-right i+p {\r\n  margin-left: 8px;\r\n  margin-right: 5px;\r\n}\r\n", "", {
+      exports.push([module.i, ".nav.navbar-nav.navbar-right i+p {\n  margin-left: 8px;\n  margin-right: 5px;\n}\n", "", {
         "version": 3,
         "sources": ["styles.css"],
         "names": [],
         "mappings": "AAAA;EACE,gBAAgB;EAChB,iBAAiB;AACnB",
         "file": "styles.css",
-        "sourcesContent": [".nav.navbar-nav.navbar-right i+p {\r\n  margin-left: 8px;\r\n  margin-right: 5px;\r\n}\r\n"]
+        "sourcesContent": [".nav.navbar-nav.navbar-right i+p {\n  margin-left: 8px;\n  margin-right: 5px;\n}\n"]
       }]); // Exports
 
       module.exports = exports;
@@ -464,7 +464,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! D:\OneDrive - FH CAMPUS 02\5. Semester\Web\Projektarbeit\wew-forum3\wew-forum\Forum\src\styles.css */
+      /*! D:\Git\WEW-Forum\Forum\src\styles.css */
       "./src/styles.css");
       /***/
     }

@@ -4,6 +4,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { AppstateService } from 'src/app/shared/services/appstate.service';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { debounce, debounceTime } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-entries',
@@ -21,9 +22,7 @@ export class EntriesComponent implements OnInit, AfterViewInit, OnDestroy {
     public IsEditEntryPopupShown = false;
     public EntryToEdit:Entry= null;
 
-    public searchTerm: string;
-
-    @ViewChild("searchTermInput") searchTermInput: ElementRef;
+    public searchTerm = new FormControl();
 
     private searchTermSubscription: Subscription;
 
@@ -33,11 +32,9 @@ export class EntriesComponent implements OnInit, AfterViewInit, OnDestroy {
       this.searchTermSubscription.unsubscribe();
     }
     ngAfterViewInit(): void {
-      this.searchTermSubscription = fromEvent(this.searchTermInput.nativeElement,'keyup').pipe(
+      this.searchTermSubscription = this.searchTerm.valueChanges.pipe(
         debounceTime(600)
-      ).subscribe( (e) => {
-        this.searchForEntries();
-      });
+      ).subscribe(x=> this.searchForEntries(x))
     }
 
     ngOnInit(): void { 
@@ -53,9 +50,9 @@ export class EntriesComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
 
-    private searchForEntries()
+    private searchForEntries(term:string)
     {
-      this.Entries = this.ReadOnlyEntities.filter(x=> x.title.includes(this.searchTerm));
+      this.Entries = this.ReadOnlyEntities.filter(x=> x.title.includes(term));
     }
 
     private ReadEntries()

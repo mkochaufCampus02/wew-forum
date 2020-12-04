@@ -4,7 +4,7 @@ import { EntriesComponent } from './entries/entries.component';
 import { SingleEntryComponent } from './single-entry/single-entry.component';
 import { RouterModule } from '@angular/router';
 import { EntryFormComponent } from './entry-form/entry-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   exports:[
     EntriesComponent,
