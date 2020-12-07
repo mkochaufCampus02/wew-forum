@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { EntriesComponent } from './dashboard/entries/entries.component';
 import { EntryDetailComponent } from './entry-detail/entry-detail/entry-detail.component';
 import { LoginComponent } from './login/login/login.component';
-import {SettingsComponent} from './settings/settings.component';
+import {SettingsComponent} from './settings/settings/settings.component';
 
 const routes: Routes = [
   {

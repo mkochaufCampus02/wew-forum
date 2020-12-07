@@ -8,8 +8,8 @@ import {DashboardModule} from './dashboard/dashboard.module';
 import {LoginModule} from './login/login.module';
 import {EntryDetailModule} from './entry-detail/entry-detail/entry-detail.module';
 import { AppRoutingModule } from './app-routing.module';
-import { SettingsComponent } from './settings/settings.component';
 import {SharedModule} from './shared/shared.module';
+import {SettingsModule} from './settings/settings.module';
 
 
 @NgModule({
@@ -21,12 +21,12 @@ import {SharedModule} from './shared/shared.module';
       LoginModule,
       EntryDetailModule,
       AppRoutingModule,
-      SharedModule
+      SharedModule,
+      SettingsModule
    ],
    declarations: [
       AppComponent,
       NavbarComponent,
-      SettingsComponent
    ],
    providers: [],
    bootstrap: [
