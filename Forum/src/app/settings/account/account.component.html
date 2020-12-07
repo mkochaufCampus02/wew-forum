@@ -1,21 +1,21 @@
 <div class="panel panel-default">
   <div class="panel-heading">Account</div>
   <div *ngIf="deletionState==0" class="panel-body">
-    <div class="col-md-8">Willst du deinen kompletten account löschen?</div>
-    <div class="col-md-4"><button class="btn btn-primary pull-right" (click)="increaseDeletionState()">Account löschen</button></div>
+    <div class="col-md-8">Do you really want to delete your account?</div>
+    <div class="col-md-4"><button class="btn btn-primary pull-right" (click)="increaseDeletionState()">Delete account</button></div>
   </div>
   <div *ngIf="deletionState==1" class="panel-body">
-    <div class="col-md-8">Bist du dir sicher?</div>
+    <div class="col-md-8">Are you sure?</div>
     <div class="col-md-4">
-      <button class="btn btn-primary pull-right" (click)="resetDeletionState()">Nein</button>
-      <button class="btn btn-primary pull-right" (click)="increaseDeletionState()">Ja</button>
+      <button class="btn btn-primary pull-right" (click)="resetDeletionState()">No</button>
+      <button class="btn btn-primary pull-right" (click)="increaseDeletionState()">Yes</button>
     </div>
   </div>
   <div *ngIf="deletionState==2" class="panel-body">
-    <div class="col-md-8">Komm schon! Bist du dir wirklich sicher?</div>
+    <div class="col-md-8">You'll be cursed if you do. Do you still want to?</div>
     <div class="col-md-4">
-      <button class="btn btn-primary pull-right" (click)="resetDeletionState()">Nein</button>
-      <button class="btn btn-primary pull-right" (click)="deleteAccount()">JA!!</button>
+      <button class="btn btn-primary pull-right" (click)="resetDeletionState()">No</button>
+      <button class="btn btn-primary pull-right" (click)="deleteAccount()">YES!!!</button>
     </div>
   </div>
 </div>
