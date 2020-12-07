@@ -20,6 +20,13 @@
       "text": "Kann mir bitte wer dringend helfen. Ich muss ganz schnell Vue lernen!",
       "creator": "philipp",
       "creatorId": 3
+    },
+    {
+      "id": 4,
+      "title": "Kann mir bitte jemand helfen.",
+      "text": "Ich haben ein Problem mit meinem Asyc Validator. Er wird nicht aufgerufen. Das Directive wurde aber im Module hinterlegt.\n\nDanke & Lg\nMichi",
+      "creator": "bertl",
+      "creatorId": 6
     }
   ],
   "comments": [
@@ -27,7 +34,7 @@
       "entry": 1,
       "id": 1,
       "text": "Ruf Michael Zikes an, der kann dir sicherlich helfen.",
-      "creator": "Simp69",
+      "creator": "Anonymous",
       "entryId": 1
     },
     {
@@ -43,6 +50,20 @@
       "text": "Ich denke, dass dir Cornelia Rauch hier auch helfen kann :)",
       "creator": "philipp",
       "creatorId": 3
+    },
+    {
+      "entry": 4,
+      "id": 5,
+      "text": "Ich hab einmal mit dem Finger geschnipst und es war gelöst. Bitte probier es nochmal :-)",
+      "creator": "cornelia",
+      "creatorId": 7
+    },
+    {
+      "entry": 4,
+      "id": 6,
+      "text": "Vielen Dank!",
+      "creator": "bertl",
+      "creatorId": 6
     }
   ],
   "users": [
@@ -58,13 +79,23 @@
     },
     {
       "id": 4,
-      "username": "Simp69",
-      "password": "Simp69"
+      "username": "Anonymous",
+      "password": "Anonymous"
     },
     {
       "username": "michael",
       "password": "michael",
       "id": 5
+    },
+    {
+      "username": "bertl",
+      "password": "bertl",
+      "id": 6
+    },
+    {
+      "username": "cornelia",
+      "password": "cornelia",
+      "id": 7
     }
   ],
   "blacklist": [
@@ -105,6 +136,18 @@
       "id": 6,
       "creator": "philipp",
       "creatorId": 3
+    },
+    {
+      "comment": "5",
+      "id": 7,
+      "creator": "bertl",
+      "creatorId": 6
+    },
+    {
+      "comment": "5",
+      "id": 8,
+      "creator": "marcel",
+      "creatorId": 2
     }
   ]
 }
