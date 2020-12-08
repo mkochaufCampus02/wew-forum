@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {LoginModule} from './login/login.module';
-import {EntryDetailModule} from './entry-detail/entry-detail/entry-detail.module';
+import {EntryDetailModule} from './entry-detail/entry-detail.module';
 import { AppRoutingModule } from './app-routing.module';
 import {SharedModule} from './shared/shared.module';
 import {SettingsModule} from './settings/settings.module';
